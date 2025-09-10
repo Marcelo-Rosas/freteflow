@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "freteflow",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "freteflow-db",
+          "database_id": "700f4ffe-c666-4436-9a91-fce55deb2908"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "3ebf28fece1141b09b1db74845c92f01",
+            "binding": "SECRET",
+            "secret_name": "CLOUDFLARE_API_TOKEN"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
